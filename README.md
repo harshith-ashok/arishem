@@ -1,73 +1,83 @@
-# React + TypeScript + Vite
+# Arishem AI — Hackathon Idea Evaluator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-Frontend-blue?style=flat-square)
+![Ollama](https://img.shields.io/badge/Ollama-Local%20LLM-black?style=flat-square)
+![TypeScript](https://img.shields.io/badge/TypeScript-Enabled-blue?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Active-success?style=flat-square)
 
-Currently, two official plugins are available:
+Arishem AI is a lightweight hackathon idea evaluation tool that simulates a **strict first-round judge**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+It analyzes a project idea and returns:
+- Judge-style scoring
+- Strengths & rejection risks
+- Key improvement suggestion
+- High-scoring title variations
+- Theme-aligned title alternatives
 
-## React Compiler
+All evaluations run using a **local LLM via Ollama**.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Fast hackathon-style idea screening
+- Structured AI evaluation (JSON output)
+- Alternate project title generation
+- Theme-aware suggestions
+- Minimal single-page interface
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Requirements
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js 18+
+- Ollama installed
+
+Pull a model:
+
+```bash
+ollama pull qwen3:8b
+````
+
+---
+
+## Run Project
+
+Install dependencies:
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Start frontend:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+Make sure Ollama is running locally:
+
+```
+http://localhost:11434
+```
+
+---
+
+## How It Works
+
+1. Enter idea title, theme, and description
+2. App sends prompt to local LLM
+3. Model returns strict JSON evaluation
+4. UI displays judge-style feedback instantly
+
+---
+
+## Model Used
+
+Default:
+
+```
+qwen3:8b
+```
+
+(Any Ollama-compatible model can be swapped.)
