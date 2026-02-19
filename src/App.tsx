@@ -128,7 +128,7 @@ RETURN EXACTLY:
             ⚖️
           </div>
           <div>
-            <h2 className="text-lg font-bold">HackJudge</h2>
+            <h2 className="text-lg font-bold">Arishem</h2>
             <p className="text-[10px] text-primary font-bold uppercase tracking-wider">
               AI Analysis Engine
             </p>
@@ -142,7 +142,7 @@ RETURN EXACTLY:
           {/* TITLE */}
           <div className="border-b border-[#e7e7f3] pb-8">
             <h1 className="text-3xl font-black tracking-tight">
-              Hackathon Idea Evaluator
+              Arishem AI - Idea Evaluator
             </h1>
             <p className="text-[#4b4c9b] mt-1">
               Project:
