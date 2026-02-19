@@ -1,9 +1,9 @@
 # Arishem AI — Hackathon Idea Evaluator
 
-![React](https://img.shields.io/badge/React-Frontend-blue?style=flat-square)
-![Ollama](https://img.shields.io/badge/Ollama-Local%20LLM-black?style=flat-square)
-![TypeScript](https://img.shields.io/badge/TypeScript-Enabled-blue?style=flat-square)
-![Status](https://img.shields.io/badge/Status-Active-success?style=flat-square)
+![React Frontend](https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![Ollama Local LLM](https://img.shields.io/badge/Ollama-Local%20LLM-000000?style=for-the-badge)
+![Vite Build](https://img.shields.io/badge/Vite-Build%20Tool-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Status Active](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
 
 Arishem AI is a lightweight hackathon idea evaluation tool that simulates a **strict first-round judge**.
 
